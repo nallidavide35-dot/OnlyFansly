@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Accesso Riservato</title>
+
+<style>
+
+body{
+background:#000;
+color:#00ff9d;
+font-family:monospace;
+text-align:center;
+padding-top:120px;
+}
+
+button{
+padding:15px 35px;
+font-size:22px;
+cursor:pointer;
+border:none;
+background:#00ff9d;
+color:black;
+border-radius:8px;
+}
+
+#terminal{
+display:none;
+margin-top:40px;
+font-size:22px;
+}
+
+#final{
+display:none;
+font-size:45px;
+color:white;
+margin-top:60px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🔒 Area privata</h1>
+<p>Accesso limitato</p>
+
+<button onclick="start()">ACCEDI</button>
+
+<div id="terminal">
+<p id="line"></p>
+</div>
+
+<div id="final">
+😂 VOLEVI EH?
+<br><br>
+TI HO PRANKATO
+<br><br>
+🤡
+</div>
+
+<script>
+
+function start(){
+
+document.querySelector("button").style.display="none"
+document.getElementById("terminal").style.display="block"
+
+let lines = [
+"Connessione stabilita...",
+"Verifica identità...",
+"Analisi cronologia internet...",
+"Accesso ai file personali...",
+"Download dati imbarazzanti...",
+"Quasi completato..."
+]
+
+let i = 0
+
+let interval = setInterval(function(){
+
+document.getElementById("line").innerText = lines[i]
+
+i++
+
+if(i >= lines.length){
+
+clearInterval(interval)
+
+setTimeout(function(){
+
+document.getElementById("terminal").style.display="none"
+document.getElementById("final").style.display="block"
+
+},1500)
+
+}
+
+},1300)
+
+}
+
+</script>
+
+</body>
+</html>
